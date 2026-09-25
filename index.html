@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FinCompass — Coaching for medical students and young doctors</title>
+<meta name="description" content="Confidential coaching on purpose, career and family for medical students and young doctors. An initiative of FinGroup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --teal:#447F8B; --teal-dark:#2F5D66; --teal-light:#9CC7CF;
+  --ink:#3D3D3D; --ink-2:#515151; --ground:#F5F3EE; --stone:#E4E0D6;
+  --white:#FFFFFF; --char:#2B2B2B; --card-dark:#4A4A4A;
+  --accent:#24476B;
+  --pad:96px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:"Albert Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--ground);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--teal)} a:hover{color:var(--teal-dark)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+h1,h2,h3,p,blockquote{margin:0}
+img{max-width:100%}
+.wrap{max-width:1440px;margin:0 auto;padding-inline:var(--pad)}
+section{padding-block:112px}
+.bg-white{background:var(--white)}
+.eyebrow{font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal)}
+.h2{font-size:44px;line-height:1.1;font-weight:800;letter-spacing:-1px;color:var(--ink)}
+.body{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;border-radius:999px;font-weight:700;font-size:19px;text-decoration:none;transition:background .15s,color .15s}
+.btn-primary{background:var(--teal);color:var(--white)}
+.btn-primary:hover{background:var(--teal-dark);color:var(--white)}
+.btn-outline{border:2px solid var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--white)}
+.placeholder{background:var(--stone);display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:15px;text-align:center;padding:16px}
+
+/* Nav */
+.nav{background:var(--white);border-bottom:1px solid var(--stone);position:sticky;top:0;z-index:10}
+.nav .wrap{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-name{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.5px;line-height:1.1}
+.brand-name span{color:var(--accent)}
+.brand-sub{font-size:12px;font-weight:500;color:var(--ink-2)}
+.nav-links{display:flex;align-items:center;gap:36px;font-size:16px;font-weight:500}
+.nav-links a:not(.btn){color:var(--ink);text-decoration:none}
+.nav-links a:not(.btn):hover{color:var(--teal)}
+.nav-links .btn{min-height:48px;padding:0 24px}
+
+/* Hero */
+.hero{padding-block:112px 120px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:28px}
+.hero h1{font-size:72px;line-height:1.02;font-weight:800;letter-spacing:-2px;color:var(--ink)}
+.hero-lead{font-size:21px;line-height:1.55;color:var(--ink-2);max-width:560px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px}
+.hero-ctas .btn{min-height:60px;padding:0 32px}
+.hero-note{font-size:15px;color:var(--ink-2)}
+.hero-art{height:540px;border-radius:28px;background:var(--stone);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-art svg{width:78%;max-width:420px;height:auto}
+.hero-art .tag{position:absolute;left:24px;bottom:24px;padding:10px 16px;border-radius:12px;background:var(--white);font-size:14px;color:var(--ink-2)}
+
+/* Why */
+.why{padding-block:96px}
+.why .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.stat{font-size:120px;font-weight:800;line-height:1;letter-spacing:-4px;color:var(--accent)}
+.stat-label{font-size:20px;line-height:1.5;color:var(--ink-2);margin-top:12px}
+.stat-label a{font-size:15px}
+.why-copy{display:flex;flex-direction:column;gap:20px}
+
+/* Grids */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.stack{display:flex;flex-direction:column;gap:48px}
+
+.who-card{padding:40px;border-radius:20px;background:var(--white);display:flex;flex-direction:column;gap:14px}
+.who-card .tier{font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal)}
+.who-card h3{font-size:28px;font-weight:800;color:var(--ink);line-height:1.2}
+.who-card p{font-size:17px;line-height:1.6;color:var(--ink-2)}
+
+/* Tracks */
+.tracks{background:var(--ink)}
+.tracks .stack{gap:56px}
+.tracks .eyebrow{color:var(--teal-light)}
+.tracks-head{display:flex;flex-direction:column;gap:16px;max-width:760px}
+.tracks-head h2{font-size:48px;line-height:1.1;font-weight:800;letter-spacing:-1px;color:var(--white)}
+.track{padding:44px 40px;border-radius:20px;background:var(--card-dark);display:flex;flex-direction:column;gap:18px}
+.track .icon{width:56px;height:56px;border-radius:16px;background:var(--teal);display:flex;align-items:center;justify-content:center}
+.track h3{font-size:30px;font-weight:800;color:var(--white)}
+.track p{font-size:17px;line-height:1.6;color:var(--stone)}
+
+/* How */
+.step{padding-top:28px;border-top:3px solid var(--teal);display:flex;flex-direction:column;gap:12px}
+.step .num{font-size:18px;font-weight:700;color:var(--teal)}
+.step h3{font-size:26px;font-weight:800;color:var(--ink)}
+.step p{font-size:17px;line-height:1.6;color:var(--ink-2)}
+
+/* Founder */
+.founder .wrap{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:center}
+.founder .photo{height:480px;border-radius:24px}
+.founder-copy{display:flex;flex-direction:column;gap:22px}
+.founder blockquote{padding:28px 32px;border-radius:20px;background:var(--ground);font-size:22px;line-height:1.5;font-weight:600;color:var(--ink)}
+
+/* Coaches */
+.coaches-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.coaches-head p{font-size:17px;line-height:1.6;color:var(--ink-2);max-width:520px}
+.grid-5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.coach{padding:24px;border-radius:20px;background:var(--white);display:flex;flex-direction:column;gap:14px}
+.coach .photo{height:200px;border-radius:14px}
+.cred{align-self:flex-start;padding:6px 12px;border-radius:999px;background:var(--accent);color:var(--white);font-size:13px;font-weight:700}
+.coach h3{font-size:22px;font-weight:800;color:var(--ink)}
+.coach p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+
+/* Commitments */
+.commit{padding-block:96px}
+.commit .grid-3{gap:40px}
+.commit h3{font-size:22px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.commit p{font-size:17px;line-height:1.6;color:var(--ink-2)}
+
+/* CTA */
+.cta{background:var(--teal);padding-block:120px;text-align:center}
+.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:28px}
+.cta h2{font-size:56px;line-height:1.08;font-weight:800;letter-spacing:-1.5px;color:var(--white);max-width:900px}
+.cta p{font-size:20px;line-height:1.6;color:var(--white);max-width:640px}
+.cta .btn{background:var(--white);color:var(--teal-dark);font-weight:800;font-size:20px;min-height:64px;padding:0 40px}
+.cta .btn:hover{background:var(--ground)}
+.cta a:focus-visible{outline-color:var(--white)}
+
+/* Footer */
+footer{background:var(--char);padding-block:56px}
+footer .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.foot-name{font-size:22px;font-weight:800;color:var(--white)}
+.foot-sub,.foot-note{font-size:15px;color:#CFCBC2}
+.foot-right{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.foot-right a{color:var(--teal-light);font-size:15px}
+
+/* Responsive */
+@media (max-width:1200px){
+  :root{--pad:56px}
+  .grid-5{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero h1{font-size:60px}
+}
+@media (max-width:900px){
+  :root{--pad:28px}
+  section{padding-block:80px}
+  .nav-links a:not(.btn){display:none}
+  .hero{padding-block:64px 80px}
+  .hero .wrap,.why .wrap,.founder .wrap{grid-template-columns:1fr;gap:48px}
+  .hero h1{font-size:46px;letter-spacing:-1px}
+  .hero-art{height:360px}
+  .stat{font-size:88px}
+  .h2,.tracks-head h2{font-size:34px}
+  .grid-3{grid-template-columns:1fr}
+  .grid-5{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .coaches-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .founder .photo{height:360px}
+  .cta h2{font-size:38px}
+  .foot-right{align-items:flex-start}
+}
+@media (max-width:520px){
+  .grid-5{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+  .hero-ctas .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="FinCompass home">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#447F8B" stroke-width="2" aria-hidden="true"><circle cx="18" cy="18" r="16"/><path d="M18 6 L22 18 L18 30 L14 18 Z" fill="#447F8B" stroke="none"/><circle cx="18" cy="18" r="2" fill="#FFFFFF" stroke="none"/></svg>
+      <div>
+        <div class="brand-name">Fin<span>Compass</span></div>
+        <div class="brand-sub">An initiative of FinGroup</div>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#tracks">Programmes</a>
+      <a href="#how">How it works</a>
+      <a href="#coaches">Our coaches</a>
+      <a class="btn btn-primary" href="#apply">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Coaching for medical students and young doctors</div>
+      <h1>You chose medicine. Now choose the life around it.</h1>
+      <p class="hero-lead">Confidential coaching on purpose, career and family, from ICF-credentialed coaches and a doctor who has walked the road before you.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#apply">Apply for coaching</a>
+        <a class="btn btn-outline" href="#how">How it works</a>
+      </div>
+      <div class="hero-note">Free for medical students. Subsidised for junior doctors.</div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 420 420" fill="none" aria-hidden="true"><circle cx="210" cy="210" r="200" stroke="#447F8B" stroke-width="2" opacity="0.35"/><circle cx="210" cy="210" r="150" stroke="#447F8B" stroke-width="2" opacity="0.5"/><circle cx="210" cy="210" r="96" stroke="#24476B" stroke-width="2"/><path d="M210 40 L240 210 L210 380 L180 210 Z" fill="#447F8B"/><path d="M210 40 L240 210 L180 210 Z" fill="#24476B"/><circle cx="210" cy="210" r="10" fill="#F5F3EE"/><text x="210" y="28" text-anchor="middle" font-family="Albert Sans, sans-serif" font-weight="700" font-size="18" fill="#3D3D3D">N</text></svg>
+      <div class="tag">[Replace with photo: young doctors, candid]</div>
+    </div>
+  </div>
+</section>
+
+<section class="why bg-white">
+  <div class="wrap">
+    <div>
+      <div class="stat">8 in 10</div>
+      <p class="stat-label">Singapore residents reporting burnout symptoms in a study of nearly 500 junior doctors across 34 specialties. <a href="https://www.healthxchange.sg/news/young-doctors-here-feeling-burnt-out-says-study" target="_blank" rel="noopener">Source</a></p>
+    </div>
+    <div class="why-copy">
+      <h2 class="h2">Medicine trains you for everything except the choices around it.</h2>
+      <p class="body">Which specialty. Whether to stay in public service. How to build a marriage and a family on call rosters. These decisions shape the next thirty years, and most young doctors make them alone. FinCompass gives you a thinking partner outside your assessment chain.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2 class="h2">Who it's for</h2>
+    <div class="grid-3">
+      <div class="who-card">
+        <div class="tier">Free</div>
+        <h3>Medical students</h3>
+        <p>Find your why before housemanship. Talks, small-group cohorts and 1:1 coaching for final-years.</p>
+      </div>
+      <div class="who-card">
+        <div class="tier">Subsidised</div>
+        <h3>House officers and medical officers</h3>
+        <p>Specialty choice, residency applications, bond decisions and the question of staying or leaving.</p>
+      </div>
+      <div class="who-card">
+        <div class="tier">Subsidised</div>
+        <h3>Young doctor families</h3>
+        <p>Couples and parents building a home around training, shifts and two demanding careers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tracks" class="tracks">
+  <div class="wrap stack">
+    <div class="tracks-head">
+      <div class="eyebrow">Three programmes</div>
+      <h2>One compass for the whole of your life in medicine.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="track">
+        <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5Z"/></svg></div>
+        <h3>Purpose &amp; Life</h3>
+        <p>Why you chose medicine, what you want from it, and how to protect the rest of your life while you train.</p>
+      </div>
+      <div class="track">
+        <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
+        <h3>Career</h3>
+        <p>Specialty choice, residency, public or private practice, and the paths beyond clinical medicine.</p>
+      </div>
+      <div class="track">
+        <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Family</h3>
+        <p>Relationships, marriage and parenting through training years, for you and your partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap stack">
+    <h2 class="h2">How it works</h2>
+    <div class="grid-3">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Talks</h3>
+        <p>Open sessions with Dr U-Jin Chow and guest doctors on the decisions that shape a medical life.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Cohorts</h3>
+        <p>Small-group coaching over 6 to 8 weeks with peers facing the same crossroads.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>1:1 coaching</h3>
+        <p>Private sessions matched to a coach who fits your goals, at your pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder bg-white">
+  <div class="wrap">
+    <div class="photo placeholder">[Photo: Dr U-Jin Chow]</div>
+    <div class="founder-copy">
+      <div class="eyebrow">Founder</div>
+      <h2 class="h2">Dr U-Jin Chow, The Doctor Banker</h2>
+      <p class="body">Medical doctor turned entrepreneur, private banker, and now founder of FinGroup. Over 25 years across medicine, business and finance, he has seen how the choices doctors make early echo for decades.</p>
+      <blockquote>[Founder's quote: why FinCompass exists, in U-Jin's words]</blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="coaches">
+  <div class="wrap stack">
+    <div class="coaches-head">
+      <h2 class="h2">Our coaches</h2>
+      <p>Credentialed by the International Coaching Federation and bound by the ICF Code of Ethics.</p>
+    </div>
+    <div class="grid-5">
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF MCC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions, couples]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF MCC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions, couples]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF ACC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions, couples]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF ACC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions, couples]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF ACC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions, couples]</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="commit bg-white">
+  <div class="wrap stack">
+    <h2 class="h2">Our commitments</h2>
+    <div class="grid-3">
+      <div><h3>Confidential</h3><p>What you share stays with your coach. Nothing reaches your hospital, school or programme.</p></div>
+      <div><h3>Nothing to sell</h3><p>No financial products are discussed in coaching. FinCompass is FinGroup's way of giving back.</p></div>
+      <div><h3>The right support</h3><p>If you need clinical care rather than coaching, we will help you reach the right professional.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="cta">
+  <div class="wrap">
+    <h2>Find your direction. Start with one conversation.</h2>
+    <p>Tell us where you are in your training and what's on your mind. We'll match you with a coach.</p>
+    <a class="btn" href="mailto:[APPLICATION EMAIL]">Apply for coaching</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="foot-name">FinCompass</div>
+      <div class="foot-sub">An initiative of FinGroup. The Healthcare Specialists.</div>
+    </div>
+    <div class="foot-right">
+      <a href="https://www.fingroup.sg" target="_blank" rel="noopener">www.fingroup.sg</a>
+      <div class="foot-note">Coaching is not medical, psychological or financial advice.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
