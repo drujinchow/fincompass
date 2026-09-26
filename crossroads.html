@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crossroads — Independent coaching for financial advisers</title>
+<meta name="description" content="Independent coaching for financial advisers who feel stuck, held back, or unsure this career is for them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --ground:#F6F3EC; --ink:#1F2933; --ink-2:#52606D; --line:#E2DCCF;
+  --white:#FFFFFF; --night:#141B22; --soft:#D5D9DE; --peach:#E8B79E;
+  --accent:#A24A27; --accent-dark:#7E3719;
+  --pad:96px;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--ground);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)} a:hover{color:var(--accent-dark)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+h1,h2,h3,p,blockquote{margin:0}
+.wrap{max-width:1440px;margin:0 auto;padding-inline:var(--pad)}
+section{padding-block:112px}
+.bg-white{background:var(--white)}
+.bg-ink{background:var(--ink)}
+.eyebrow{font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+.h2{font-family:var(--serif);font-size:52px;line-height:1.1;font-weight:600;letter-spacing:-1px;color:var(--ink)}
+.lead{font-size:18px;line-height:1.6;color:var(--ink-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;border-radius:999px;font-weight:700;font-size:18px;text-decoration:none;transition:background .15s,color .15s}
+.btn-accent{background:var(--accent);color:var(--white)}
+.btn-accent:hover{background:var(--accent-dark);color:var(--white)}
+.btn-dark{background:var(--ink);color:var(--white)}
+.btn-dark:hover{background:#000;color:var(--white)}
+.btn-outline{border:2px solid var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--white)}
+.placeholder{background:var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:15px;text-align:center;padding:16px}
+
+/* Nav */
+.nav{background:var(--ground);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav .wrap{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand-name{font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:-.3px}
+.nav-links{display:flex;align-items:center;gap:36px;font-size:16px;font-weight:600}
+.nav-links a:not(.btn){color:var(--ink);text-decoration:none}
+.nav-links a:not(.btn):hover{color:var(--accent)}
+.nav-links .btn{min-height:48px;padding:0 24px;font-size:16px}
+
+/* Hero */
+.hero{padding-block:120px 128px}
+.hero .wrap{display:grid;grid-template-columns:2fr 1fr;gap:32px;align-items:end}
+.hero-copy{display:flex;flex-direction:column;gap:32px}
+.hero h1{font-family:var(--serif);font-size:84px;line-height:1;font-weight:600;letter-spacing:-2px;color:var(--ink)}
+.hero-lead{font-size:22px;line-height:1.55;color:var(--ink-2);max-width:680px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px}
+.hero-ctas .btn{min-height:60px;padding:0 32px}
+.promise-card{padding:32px;border-radius:24px;background:var(--ink);display:flex;flex-direction:column;gap:16px}
+.promise-card .eyebrow{color:var(--peach)}
+.promise-card p{font-family:var(--serif);font-size:24px;line-height:1.35;color:var(--white)}
+.promise-card a{color:var(--peach);font-weight:600}
+.promise-card a:hover{color:var(--white)}
+
+/* Programmes */
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:48px}
+.head-row .h2{max-width:720px}
+.head-row .lead{max-width:460px}
+.stack{display:flex;flex-direction:column;gap:56px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.prog{padding:40px;border-radius:24px;background:var(--ground);display:flex;flex-direction:column;gap:20px}
+.prog .tag{font-size:14px;font-weight:800;letter-spacing:1.5px;color:var(--accent)}
+.prog h3{font-family:var(--serif);font-size:32px;line-height:1.2;font-weight:600;color:var(--ink)}
+.prog p{font-size:17px;line-height:1.6;color:var(--ink-2)}
+.prog .meta{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:15px;line-height:1.5;color:var(--ink)}
+.prog.dark{background:var(--ink)}
+.prog.dark .tag{color:var(--peach)}
+.prog.dark h3,.prog.dark .meta{color:var(--white)}
+.prog.dark p{color:var(--soft)}
+.prog.dark .meta{border-top-color:#3E4C59}
+
+/* How */
+.how .grid-3{gap:48px}
+.step{display:flex;flex-direction:column;gap:14px}
+.step .num{font-family:var(--serif);font-size:56px;font-weight:600;line-height:1;color:var(--accent)}
+.step h3{font-size:24px;font-weight:800;color:var(--ink)}
+.step p{font-size:17px;line-height:1.6;color:var(--ink-2)}
+
+/* Founder */
+.founder .wrap{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:center}
+.founder .photo{height:500px;border-radius:24px}
+.founder-copy{display:flex;flex-direction:column;gap:22px}
+.founder-copy .h2{font-size:48px}
+.founder-copy p{font-size:19px;line-height:1.65;color:var(--ink-2)}
+.founder blockquote{padding:28px 32px;border-radius:20px;background:var(--ground);font-family:var(--serif);font-size:24px;line-height:1.45;color:var(--ink)}
+
+/* Coaches */
+.grid-5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.coach{padding:24px;border-radius:20px;background:var(--white);display:flex;flex-direction:column;gap:14px}
+.coach .photo{height:200px;border-radius:14px}
+.cred{align-self:flex-start;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--white);font-size:13px;font-weight:700}
+.coach h3{font-size:22px;font-weight:800;color:var(--ink)}
+.coach p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+
+/* Promise */
+.promise .wrap{display:grid;grid-template-columns:5fr 7fr;gap:32px}
+.promise .eyebrow{color:var(--peach)}
+.promise-head{display:flex;flex-direction:column;gap:18px}
+.promise-head h2{font-family:var(--serif);font-size:48px;line-height:1.1;font-weight:600;letter-spacing:-1px;color:var(--white)}
+.promise-body{display:flex;flex-direction:column;gap:28px}
+.promise-rule{font-family:var(--serif);font-size:26px;line-height:1.45;color:var(--white)}
+.promise-points{display:grid;grid-template-columns:1fr 1fr;gap:24px;font-size:16px;line-height:1.6;color:var(--soft)}
+.promise-points strong{color:var(--white)}
+
+/* CTA */
+.cta{padding-block:128px;text-align:center}
+.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:28px}
+.cta h2{font-family:var(--serif);font-size:64px;line-height:1.05;font-weight:600;letter-spacing:-1.5px;color:var(--ink);max-width:960px}
+.cta p{font-size:20px;line-height:1.6;color:var(--ink-2);max-width:640px}
+.cta .btn{min-height:64px;padding:0 40px;font-weight:800;font-size:19px}
+
+/* Footer */
+footer{background:var(--night);padding-block:56px}
+footer .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.foot-name{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--white);margin-bottom:8px}
+.foot-sub,.foot-note{font-size:15px;color:#B8BEC6}
+.foot-note{font-size:14px;text-align:right;max-width:420px}
+
+/* Responsive */
+@media (max-width:1200px){
+  :root{--pad:56px}
+  .hero h1{font-size:68px}
+  .grid-5{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  :root{--pad:28px}
+  section{padding-block:80px}
+  .nav-links a:not(.btn){display:none}
+  .hero{padding-block:64px 80px}
+  .hero .wrap,.founder .wrap,.promise .wrap{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:48px;letter-spacing:-1px}
+  .h2,.founder-copy .h2,.promise-head h2{font-size:36px}
+  .head-row{flex-direction:column;align-items:flex-start;gap:16px}
+  .grid-3{grid-template-columns:1fr}
+  .grid-5{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .founder .photo{height:360px}
+  .promise-rule{font-size:22px}
+  .promise-points{grid-template-columns:1fr}
+  .cta h2{font-size:40px}
+  .foot-note{text-align:left}
+}
+@media (max-width:520px){
+  .grid-5{grid-template-columns:1fr}
+  .hero h1{font-size:40px}
+  .hero-ctas .btn{width:100%}
+  .nav-links .btn{padding:0 16px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Crossroads home">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#A24A27" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M17 31V17"/><path d="M17 17 L7 5"/><path d="M17 17 L27 5"/><circle cx="17" cy="17" r="3" fill="#A24A27" stroke="none"/></svg>
+      <span class="brand-name">Crossroads</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#programmes">Programmes</a>
+      <a href="#how">How it works</a>
+      <a href="#coaches">Coaches</a>
+      <a class="btn btn-dark" href="#book">Book a free clarity call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Independent coaching for financial advisers</div>
+      <h1>There's a better way to build a career in advice.</h1>
+      <p class="hero-lead">For advisers who are tired of starting from zero every January, held back from serving clients the way they want to, or unsure this career is for them.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-accent" href="#book">Book a free clarity call</a>
+        <a class="btn btn-outline" href="#programmes">Find your programme</a>
+      </div>
+    </div>
+    <aside class="promise-card">
+      <div class="eyebrow">Our promise</div>
+      <p>We coach you. We never recruit you, and never recommend a firm.</p>
+      <a href="#promise">Read the full rule</a>
+    </aside>
+  </div>
+</section>
+
+<section id="programmes" class="bg-white">
+  <div class="wrap stack">
+    <div class="head-row">
+      <h2 class="h2">Which question are you asking?</h2>
+      <p class="lead">Three programmes, each built around the question that brought you here. A free call helps you choose.</p>
+    </div>
+    <div class="grid-3">
+      <article class="prog">
+        <div class="tag">RESET</div>
+        <h3>"Is there a better way to do this?"</h3>
+        <p>You've been at it two years or more. Roadshows, cold calls, selling insurance, and every 1st of January you start again from zero.</p>
+        <div class="meta"><strong>Small group, 8 weeks</strong><br>Plus a masterclass with Dr U-Jin Chow</div>
+      </article>
+      <article class="prog dark">
+        <div class="tag">EXPAND</div>
+        <h3>"What's possible, and how do I get there?"</h3>
+        <p>You've had success. You want to serve clients holistically, beyond insurance, but your firm, agency or leader holds you back.</p>
+        <div class="meta"><strong>1:1 with a master coach, 3 to 6 months</strong><br>Models of practice, not a pitch for any firm</div>
+      </article>
+      <article class="prog">
+        <div class="tag">FIT</div>
+        <h3>"Is financial advisory even for me?"</h3>
+        <p>You're new, or switching careers. The rewards appeal, but you're not sure your personality and skills suit the work.</p>
+        <div class="meta"><strong>1:1 decision package, 2 to 3 sessions</strong><br>"Not for me" is a good outcome too</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="how">
+  <div class="wrap stack">
+    <h2 class="h2">How it works</h2>
+    <div class="grid-3">
+      <div class="step"><div class="num">1</div><h3>Free clarity call</h3><p>Thirty minutes with a coach to talk through where you are and what you want.</p></div>
+      <div class="step"><div class="num">2</div><h3>The right programme</h3><p>Reset, Expand or Fit, matched to a coach who suits your goals.</p></div>
+      <div class="step"><div class="num">3</div><h3>Your decisions, your direction</h3><p>You leave with clarity and a plan, whether that means staying, changing how you work, or moving on.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="founder bg-white">
+  <div class="wrap">
+    <div class="photo placeholder">[Photo: Dr U-Jin Chow]</div>
+    <div class="founder-copy">
+      <div class="eyebrow">Founder</div>
+      <h2 class="h2">Dr U-Jin Chow</h2>
+      <p>Medical doctor turned entrepreneur and private banker, with over 25 years across medicine, banking and financial advice. He founded FinGroup, a Singapore advisory firm, and has built and led teams of advisers.</p>
+      <p>He shapes the programmes and leads the masterclasses. He does not coach 1:1, and he does not recruit coaching clients.</p>
+      <blockquote>[Founder's quote: why this practice exists, in U-Jin's words]</blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="coaches">
+  <div class="wrap stack">
+    <div class="head-row">
+      <h2 class="h2">Your coaches</h2>
+      <p class="lead">Credentialed by the International Coaching Federation and bound by the ICF Code of Ethics.</p>
+    </div>
+    <div class="grid-5">
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF MCC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF MCC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF ACC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF ACC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions]</p></div>
+      <div class="coach"><div class="photo placeholder">[Photo]</div><div class="cred">ICF ACC</div><h3>[Coach name]</h3><p>[Focus: e.g. career transitions]</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="promise" class="promise bg-ink">
+  <div class="wrap">
+    <div class="promise-head">
+      <div class="eyebrow">Our promise</div>
+      <h2>Neutral, in writing.</h2>
+    </div>
+    <div class="promise-body">
+      <p class="promise-rule">FinGroup never approaches coaching clients unless they opt in after their programme ends. Coaches never recommend any firm and never share client information with FinGroup.</p>
+      <div class="promise-points">
+        <div><strong>Confidential.</strong> What you share stays with your coach.</div>
+        <div><strong>No product talk.</strong> We coach your career and practice, never products.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="cta">
+  <div class="wrap">
+    <h2>Stop starting over. Start with one conversation.</h2>
+    <p>A free, confidential 30-minute call with a coach. No obligation, and no sales pitch.</p>
+    <a class="btn btn-accent" href="[BOOKING LINK]">Book a free clarity call</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="foot-name">Crossroads</div>
+      <div class="foot-sub">Independent coaching for financial advisers. Founded by Dr U-Jin Chow, who also founded FinGroup.</div>
+    </div>
+    <div class="foot-note">Coaching is not financial, legal, psychological or employment advice.</div>
+  </div>
+</footer>
+
+</body>
+</html>
